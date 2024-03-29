@@ -1,0 +1,31 @@
+<div class="fwl-lookup">
+  <mat-drawer-container autosize>
+    <mat-drawer #settingsDrawer position="end">
+      <app-settings (languagesUpdate)="updateLanguages($event); settingsDrawer.close()"
+                    (ignoredSectionsUpdate)="updateIgnoredSections($event); settingsDrawer.close()"></app-settings>
+    </mat-drawer>
+
+    <div class="fwl-results" #results>
+    </div>
+
+    <div class="fwl-footer">
+      <span class="fwl-footer-left-container">
+        <span *ngIf="history.length > 0" class="fwl-arrow-icon" (click)="back()">￩</span>
+        <span class="fwl-search-input">
+          <input [(ngModel)]="query" placeholder="Search for a word"
+                 (keydown.enter)="lookUpWord(query)">
+          <span class="fwl-arrow-icon" (click)="lookUpWord(query)">￫</span>
+        </span>
+        <mat-spinner [diameter]="20" *ngIf="loading"></mat-spinner>
+      </span>
+
+      <span class="fwl-footer-right-container">
+        <select [(ngModel)]="selectedLanguage" (ngModelChange)="updateLanguage()">
+          <option *ngFor="let language of languages" [value]="language">{{ language }}</option>
+        </select>
+        <span class="fwl-settings-icon" (click)="settingsDrawer.toggle()">⚙</span>
+      </span>
+
+    </div>
+  </mat-drawer-container>
+</div>

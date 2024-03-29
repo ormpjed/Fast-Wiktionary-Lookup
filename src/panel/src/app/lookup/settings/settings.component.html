@@ -1,0 +1,30 @@
+<div class="fwl-settings">
+  <div class="fwl-settings-body">
+    <h3>Languages</h3>
+    <div class="fwl-cards-container">
+      <div *ngFor="let language of languages" class="fwl-card">
+        {{ language }}
+        <span class="fwl-remove-icon" (click)="removeLanguage(language)">×</span>
+      </div>
+      <div class="fwl-card">
+        <input [(ngModel)]="newLanguage" (keydown.enter)="addLanguage()" class="fwl-new-language-field" placeholder="Add language...">
+        <span class="fwl-add-icon" (click)="addLanguage()">+</span>
+      </div>
+    </div>
+
+    <h3>Ignore sections</h3>
+    <div class="fwl-cards-container">
+      <div *ngFor="let section of ignoredSections | keyvalue">
+        <div class="fwl-card">
+          <span>{{ section.key.replaceAll('_', ' ') }}</span>
+          <input type="checkbox" [checked]="section.value" (change)="toggleIgnored(section.key)">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="fwl-settings-footer">
+    <button (click)="save()">Save</button>
+    <button (click)="load()">Cancel</button>
+  </div>
+</div>

@@ -1,0 +1,60 @@
+.fwl-settings-body {
+  margin-bottom: 30px;
+  padding: 8pt;
+  overflow-y: scroll;
+
+  background: var(--fwl-body-color);
+}
+
+.fwl-cards-container {
+  display: flex;
+  flex-direction: column;
+  padding: 2pt;
+}
+
+.fwl-card {
+  border-radius: 4pt;
+  background: var(--fwl-tertiary-color);
+  margin-bottom: 2pt;
+  padding: 2pt;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  > .fwl-new-language-field {
+    max-width: 10em;
+    background: none;
+    appearance: none;
+    border: none;
+    outline: none;
+    color: inherit;
+  }
+}
+
+.fwl-add-icon, .fwl-remove-icon {
+  cursor: pointer;
+
+  font-size: 16pt;
+  font-family: sans-serif;
+}
+
+.fwl-settings-footer {
+  position: absolute;
+  bottom: 0;
+
+  background: var(--fwl-header-color);
+  width: 100%;
+  padding-top: 4pt;
+  padding-bottom: 4pt;
+  padding-left: 4pt;
+}
+
+button {
+  padding: 4pt;
+  margin: 2pt;
+  border: black 1px;
+  border-radius: 4px;
+  background: var(--fwl-tertiary-color);
+  color: inherit;
+}

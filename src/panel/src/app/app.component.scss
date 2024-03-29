@@ -1,0 +1,71 @@
+.fwl-wrapper {
+  all: initial;
+
+  z-index: 1000000;
+
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  color: var(--fwl-text-color);
+}
+
+a {
+  color: rgb(47, 162, 255);
+  cursor: pointer;
+}
+
+a.new {
+  color: rgb(255, 107, 107);
+  cursor: auto;
+}
+
+a.extiw, a.external {
+  color: rgb(114, 173, 223);
+  text-decoration: none;
+}
+
+
+.fwl-tab {
+  visibility: hidden;
+
+  cursor: pointer;
+
+  position: fixed;
+  bottom: 60pt;
+  right: 0;
+
+  background: var(--fwl-header-color);
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+  font-style: italic;
+
+  padding: 10pt 4pt;
+
+  &.opened {
+    visibility: unset;
+  }
+}
+
+.fwl-panel {
+  visibility: hidden;
+
+  position: fixed;
+  bottom: 0;
+  right: 0;
+
+  width: fit-content;
+  max-width: 90%;
+
+  border-top-left-radius: 4px;
+
+  &.opened {
+    visibility: unset;
+  }
+}
+
+.fwl-header {
+  cursor: pointer;
+
+  background: var(--fwl-header-color);
+  font-size: 16pt;
+  padding: 10pt;
+}

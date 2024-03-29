@@ -1,0 +1,10 @@
+<div class="fwl-wrapper">
+  <div class="fwl-panel" [class.opened]="opened" (dblclick)="$event.stopPropagation()">
+    <div (click)="close()" class="fwl-header">
+      Fast Wiktionary Lookup
+    </div>
+    <app-lookup [querySubject]="querySubject"></app-lookup>
+  </div>
+
+  <div (click)="open()" class="fwl-tab" [class.opened]="!opened" (dblclick)="$event.stopPropagation()">[ˈw]</div>
+</div>
